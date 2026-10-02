@@ -1,4 +1,4 @@
-package com.example.laba1.ui.theme
+package com.example.mobilelabas.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

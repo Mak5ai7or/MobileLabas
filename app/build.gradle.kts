@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.laba1"
+    namespace = "com.example.mobilelabas"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.laba1"
+        applicationId = "com.example.mobilelabas"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -42,6 +42,7 @@ dependencies {
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     testImplementation(libs.junit)
