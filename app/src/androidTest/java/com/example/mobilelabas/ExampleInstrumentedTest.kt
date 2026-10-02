@@ -1,4 +1,4 @@
-package com.example.laba1
+package com.example.mobilelabas
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

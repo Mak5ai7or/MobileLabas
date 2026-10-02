@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MobileLabas</string>
+
     <string name="authorize_label">Авторизация</string>
 
     <string name="hint_login">Логин</string>
@@ -13,4 +13,5 @@
     <string name="error_empty_both">Вы не ввели логин и (или) пароль</string>
     <string name="result_login_password">Логин: %1$s, Пароль: %2$s</string>
     <string name="list_title">Разыскиваются!</string>
+
 </resources>

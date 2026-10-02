@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_largeplus">28dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
+    <dimen name="margin_xxlarge">48dp</dimen>
+    <dimen name="margin_xxxlarge">64dp</dimen>
+    <dimen name="margin_xxxxlarge">80dp</dimen>
+    <dimen name="margin_giga">120dp</dimen>
+
+    <dimen name="margin_horizontal">24dp</dimen>
+
+    <dimen name="layout_width">0dp</dimen>
+    <dimen name="layout_width_language">120dp</dimen>
+
+    <dimen name="layout_height_language">25dp</dimen>
+    <dimen name="layout_height_for_buttons">48dp</dimen>
+    <dimen name="layout_height">56dp</dimen>
+
+    <dimen name="text_size_title">34sp</dimen>
+    <dimen name="text_size_language">16sp</dimen>
+    <dimen name="text_size_recycle">40sp</dimen>
+
+</resources>

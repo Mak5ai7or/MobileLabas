@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.laba1"
+    namespace = "com.example.mobilelabas"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.example.laba1"
+        applicationId = "com.example.mobilelabas"
         minSdk = 24
         targetSdk = 37
         versionCode = 1
@@ -36,14 +36,19 @@ android {
 }
 
 dependencies {
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
