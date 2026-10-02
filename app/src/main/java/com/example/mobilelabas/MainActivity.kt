@@ -3,31 +3,39 @@ package com.example.mobilelabas
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.example.mobilelabas.ui.theme.Laba2Theme
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.setApplicationLocales
+import androidx.core.os.LocaleListCompat
+import androidx.core.content.edit
 
-class MainActivity : ComponentActivity() {
-    private var useLinear = false
+class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val savedLang = getSharedPreferences("settings", MODE_PRIVATE)
+            .getString("language", "ru")
+
+        if (AppCompatDelegate.getApplicationLocales().isEmpty) {
+            setApplicationLocales(
+                LocaleListCompat.forLanguageTags(savedLang!!)
+            )
+        }
         renderLayout()
+
     }
     private fun renderLayout() {
         setContentView(R.layout.loginscreen_constraint)
         findViewById<Button>(R.id.enterButton).setOnClickListener {
             loginHandler()
+        }
+        findViewById<ImageButton>(R.id.changeLanguageButton).setOnClickListener {
+            changeLanguage()
         }
     }
     private fun loginHandler() {
@@ -35,11 +43,26 @@ class MainActivity : ComponentActivity() {
         val password = findViewById<EditText>(R.id.passSpace).text?.toString().orEmpty().trim()
 
         val message = when {
-            login.isEmpty() || password.isEmpty() -> "Вы не ввели логин и (или) пароль"
-            else -> "Логин: $login Пароль: $password"
+            login.isEmpty() || password.isEmpty() -> getString(R.string.error_empty_both)
+            else -> getString(R.string.result_login_password)
         }
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
 
         findViewById<TextView>(R.id.resultEnter).text = message
     }
-}
+    private fun changeLanguage() {
+        val currentLanguage = AppCompatDelegate.getApplicationLocales()
+            .toLanguageTags()
+            .ifEmpty { "ru" }
+
+        val nextLanguage = if (currentLanguage.startsWith("ru")) "en" else "ru"
+
+        getSharedPreferences("settings", MODE_PRIVATE)
+            .edit {
+                putString("language", nextLanguage)
+            }
+
+        setApplicationLocales(LocaleListCompat.forLanguageTags(nextLanguage))
+        }
+    }
+
