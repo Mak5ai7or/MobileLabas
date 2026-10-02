@@ -1,5 +1,6 @@
 package com.example.mobilelabas
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -7,6 +8,7 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.app.AppCompatDelegate.setApplicationLocales
@@ -17,7 +19,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         val savedLang = getSharedPreferences("settings", MODE_PRIVATE)
             .getString("language", "ru")
 
@@ -42,13 +43,18 @@ class MainActivity : AppCompatActivity() {
         val login = findViewById<EditText>(R.id.loginSpace).text?.toString().orEmpty().trim()
         val password = findViewById<EditText>(R.id.passSpace).text?.toString().orEmpty().trim()
 
-        val message = when {
-            login.isEmpty() || password.isEmpty() -> getString(R.string.error_empty_both)
-            else -> getString(R.string.result_login_password)
+        when {
+            login.isEmpty() || password.isEmpty() -> {
+                val message = getString(R.string.error_empty_both)
+                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+                findViewById<TextView>(R.id.resultEnter).text = message
+            }
+            else -> {
+                val intent = Intent(this, ListActivity::class.java)
+                intent.putExtra("login", login)
+                startActivity(intent)
+            }
         }
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-
-        findViewById<TextView>(R.id.resultEnter).text = message
     }
     private fun changeLanguage() {
         val currentLanguage = AppCompatDelegate.getApplicationLocales()

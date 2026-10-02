@@ -1,5 +1,7 @@
 <resources>
-    <string name="authorize_label">Authorize</string>
+    <string name="app_name">MobileLabas</string>
+
+    <string name="authorize_label">Authorization</string>
 
     <string name="hint_login">Login</string>
     <string name="hint_password">Password</string>
@@ -10,4 +12,5 @@
 
     <string name="error_empty_both">You dont enter login and (or) password</string>
     <string name="result_login_password">login: %1$s, Password: %2$s</string>
+    <string name="list_title">Wanted!</string>
 </resources>

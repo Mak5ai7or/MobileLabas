@@ -21,4 +21,6 @@
 
     <dimen name="text_size_title">34sp</dimen>
     <dimen name="text_size_language">16sp</dimen>
+    <dimen name="text_size_recycle">40sp</dimen>
+
 </resources>
