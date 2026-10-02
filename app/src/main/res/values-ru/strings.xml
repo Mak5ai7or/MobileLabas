@@ -1,0 +1,14 @@
+<resources>
+    <string name="authorize_label">Авторизация</string>
+
+    <string name="hint_login">Логин</string>
+    <string name="hint_password">Пароль</string>
+
+    <string name="button_enter">Войти</string>
+
+    <string name="lang">Русский (Ru)</string>
+
+    <string name="error_empty_both">Вы не ввели логин и (или) пароль</string>
+    <string name="result_login_password">Логин: %1$s, Пароль: %2$s</string>
+
+</resources>
