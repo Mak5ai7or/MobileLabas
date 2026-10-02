@@ -2,7 +2,9 @@ package com.example.mobilelabas
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -20,29 +22,24 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.loginscreen_constraint)
         renderLayout()
     }
-    private fun renderLayout(){
-        if (useLinear) {
-            setContentView(R.layout.loginscreen_linear)
-        } else {
-            setContentView(R.layout.loginscreen_constraint)
-        }
-
-        val changeButton = findViewById<Button>(R.id.changeLayoutButton)
-        changeButton.text = if (useLinear) {
-            "Сменить на ConstraintLayout"
-        } else {
-            "Сменить на LinearLayout"
-        }
-        changeButton.setOnClickListener {
-            useLinear = !useLinear
-            renderLayout()
-        }
-
+    private fun renderLayout() {
+        setContentView(R.layout.loginscreen_constraint)
         findViewById<Button>(R.id.enterButton).setOnClickListener {
-            var i = 1;
+            loginHandler()
         }
+    }
+    private fun loginHandler() {
+        val login = findViewById<EditText>(R.id.loginSpace).text?.toString().orEmpty().trim()
+        val password = findViewById<EditText>(R.id.passSpace).text?.toString().orEmpty().trim()
+
+        val message = when {
+            login.isEmpty() || password.isEmpty() -> "Вы не ввели логин и (или) пароль"
+            else -> "Логин: $login Пароль: $password"
+        }
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+
+        findViewById<TextView>(R.id.resultEnter).text = message
     }
 }
