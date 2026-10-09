@@ -30,6 +30,10 @@ class MainActivity : AppCompatActivity() {
         renderLayout()
 
     }
+
+    // Картинка со звездными войнами на фоне
+    // Цвета кнопок и полей в соответствии с фоном
+
     private fun renderLayout() {
         setContentView(R.layout.loginscreen_constraint)
         findViewById<Button>(R.id.enterButton).setOnClickListener {
@@ -51,7 +55,6 @@ class MainActivity : AppCompatActivity() {
             }
             else -> {
                 val intent = Intent(this, ListActivity::class.java)
-                intent.putExtra("login", login)
                 startActivity(intent)
             }
         }
