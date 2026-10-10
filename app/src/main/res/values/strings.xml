@@ -9,8 +9,16 @@
     <string name="button_enter">Войти</string>
 
     <string name="lang">Русский (Ru)</string>
+    <string name="title_menu">Выберите лабораторную работу</string>
 
     <string name="error_empty_both">Вы не ввели логин и (или) пароль</string>
     <string name="result_login_password">Логин: %1$s, Пароль: %2$s</string>
     <string name="list_title">Разыскиваются!</string>
+
+
+    <string name="lab1_title">Лабораторная работа 1\nЗнакомство с экосистемой Android и инструментами разработки</string>
+    <string name="lab2_title">Лабораторная работа 2\nПроектирование пользовательского интерфейса. Layouts и ViewElements</string>
+    <string name="lab3_title">Лабораторная работа 3\nОбработка событий и основы Activity</string>
+    <string name="lab4_title">Лабораторная работа 4\nРабота с ресурсами приложения</string>
+    <string name="lab5_title">Лабораторная работа 5\nСписки и адаптеры (RecyclerView)</string>
 </resources>

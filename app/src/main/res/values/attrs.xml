@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="appBgContent" format="color"/>
+    <attr name="appTextPrimary" format="color"/>
+    <attr name="appInfoIcon" format="color"/>
+    <attr name="appIconRegular" format="color"/>
+    <attr name="appCaption" format="color"/>
+    <attr name="appLabel" format="color"/>
+    <attr name="appAccent" format="color"/>
+    <attr name="appOnAccent" format="color"/>
+</resources>

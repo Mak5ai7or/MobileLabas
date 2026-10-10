@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/authorizeLabel"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_marginTop="92dp"
+        android:layout_marginEnd="2dp"
+        android:text="Авторизация"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/loginSpace"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="67dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Логин" />
+
+    <EditText
+        android:id="@+id/passSpace"
+        android:layout_width="273dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="67dp"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Пароль" />
+
+    <Button
+        android:id="@+id/enterButton"
+        android:layout_width="222dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="95dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="67dp"
+        android:text="Войти" />
+
+    <Button
+        android:id="@+id/changeLayoutButton"
+        android:layout_width="262dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="67dp"
+        android:text="Сменить на constraintLayout" />
+
+</LinearLayout>

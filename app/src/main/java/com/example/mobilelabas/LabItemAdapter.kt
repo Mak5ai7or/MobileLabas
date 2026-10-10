@@ -10,11 +10,13 @@ class LabsAdapter(
     private val onClick: (LabItem) -> Unit
     ) : RecyclerView.Adapter<LabsAdapter.LabViewHolder>() {
 
-    class LabViewHolder(val button: Button) : RecyclerView.ViewHolder(button)
+    class LabViewHolder(itemView: android.view.View) : RecyclerView.ViewHolder(itemView) {
+        val button: Button = itemView.findViewById(R.id.button_for_lab)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LabViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_for_lab_menu, parent, false) as Button
+            .inflate(R.layout.item_for_lab_menu, parent, false)
         return LabViewHolder(view)
     }
 

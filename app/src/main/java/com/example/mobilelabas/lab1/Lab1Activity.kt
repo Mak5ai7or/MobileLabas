@@ -1,4 +1,4 @@
-package com.example.laba1
+package com.example.mobilelabas.lab1
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,8 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.mobilelabas.ui.theme.Laba1Theme
 
-class MainActivity : ComponentActivity() {
+class Lab1Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
