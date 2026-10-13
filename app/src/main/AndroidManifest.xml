@@ -28,8 +28,9 @@
         <activity android:name=".lab3.Lab3Activity" android:exported="false"/>
         <activity android:name=".lab4.Lab4Activity" android:exported="false"/>
         <activity android:name=".lab5.Lab5Activity" android:exported="false"/>
-        <activity android:name=".lab5.ListActivity" android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".lab5.ListActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".lab6.Lab6Activity" android:exported="false"/>
+        <activity android:name=".lab6.ListActivity" android:exported="false" android:windowSoftInputMode="adjustResize" />
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"

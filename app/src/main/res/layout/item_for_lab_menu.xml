@@ -16,7 +16,7 @@
         android:minHeight="@dimen/image_button_height"
         android:background="@drawable/rounded_button"
         android:backgroundTint="?attr/appInfoIcon"
-        android:textColor="?attr/appOnAccent"
+        android:textColor="?attr/appTextPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
