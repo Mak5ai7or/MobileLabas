@@ -14,10 +14,13 @@ import androidx.core.os.LocaleListCompat
 import androidx.core.content.edit
 import com.example.mobilelabas.LanguageManager
 import com.example.mobilelabas.R
+import com.example.mobilelabas.ThemeManager
 
 class Lab5Activity : AppCompatActivity() {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(ThemeManager.themeRes(this))
         LanguageManager.applySaved(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lab5_loginscreen)
@@ -28,8 +31,10 @@ class Lab5Activity : AppCompatActivity() {
         findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
             LanguageManager.toggle(this)
         }
+        findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
+            toggleTheme()
+        }
     }
-
     // Картинка со звездными войнами на фоне
     // Цвета кнопок и полей в соответствии с фоном
     private fun loginHandler() {
@@ -48,6 +53,13 @@ class Lab5Activity : AppCompatActivity() {
             }
         }
     }
+    private fun toggleTheme() {
+        val newDark = !ThemeManager.isDark(this)
+        ThemeManager.setDark(this, newDark)
+        recreate()
+    }
+
+
 
 }
 

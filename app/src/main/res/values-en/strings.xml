@@ -20,4 +20,5 @@
     <string name="lab3_title">Laboratory work 3\nEvent handling and Activity basics</string>
     <string name="lab4_title">Laboratory work 4\nWorking with application resources</string>
     <string name="lab5_title">Laboratory work 5\nLists and adapters (RecyclerView)</string>
+    <string name="lab6_title">Laboratory work 6</string>
 </resources>

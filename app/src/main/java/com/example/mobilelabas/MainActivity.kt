@@ -11,11 +11,15 @@ import com.example.mobilelabas.lab2.Lab2Activity
 import com.example.mobilelabas.lab3.Lab3Activity
 import com.example.mobilelabas.lab4.Lab4Activity
 import com.example.mobilelabas.lab5.Lab5Activity
+import com.example.mobilelabas.lab6.Lab6Activity
 
 class MainActivity : AppCompatActivity() {
 
-        override fun onCreate(savedInstanceState: Bundle?) {
-            setTheme(ThemeManager.themeRes(this))
+    private var appliedTheme = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+            appliedTheme = ThemeManager.themeRes(this)
+            setTheme(appliedTheme)
             LanguageManager.applySaved(this)
             super.onCreate(savedInstanceState)
             setContentView(R.layout.lab_menu)
@@ -25,7 +29,8 @@ class MainActivity : AppCompatActivity() {
                 LabItem(getString(R.string.lab2_title), Lab2Activity::class.java),
                 LabItem(getString(R.string.lab3_title), Lab3Activity::class.java),
                 LabItem(getString(R.string.lab4_title), Lab4Activity::class.java),
-                LabItem(getString(R.string.lab5_title), Lab5Activity::class.java)
+                LabItem(getString(R.string.lab5_title), Lab5Activity::class.java),
+                LabItem(getString(R.string.lab6_title), Lab6Activity::class.java)
             )
 
             val rv = findViewById<RecyclerView>(R.id.lab_menu)
@@ -45,5 +50,14 @@ class MainActivity : AppCompatActivity() {
             ThemeManager.setDark(this, newDark)
             recreate()
         }
+
+    override fun onResume() {
+        super.onResume()
+        val desiredTheme = ThemeManager.themeRes(this)
+        if (desiredTheme != appliedTheme) {
+            appliedTheme = desiredTheme
+            recreate()
+        }
+    }
 
     }

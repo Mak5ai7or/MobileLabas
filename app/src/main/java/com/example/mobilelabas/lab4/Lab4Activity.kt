@@ -12,10 +12,12 @@ import androidx.appcompat.app.AppCompatDelegate.setApplicationLocales
 import androidx.core.os.LocaleListCompat
 import com.example.mobilelabas.LanguageManager
 import com.example.mobilelabas.R
+import com.example.mobilelabas.ThemeManager
 
 class Lab4Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(ThemeManager.themeRes(this))
         LanguageManager.applySaved(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lab4_loginscreen)
@@ -26,7 +28,9 @@ class Lab4Activity : AppCompatActivity() {
         findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
             LanguageManager.toggle(this)
         }
-
+        findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
+            toggleTheme()
+        }
     }
     private fun loginHandler() {
         val login = findViewById<EditText>(R.id.loginSpace).text?.toString().orEmpty().trim()
@@ -40,6 +44,10 @@ class Lab4Activity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.resultEnter).text = message
     }
-
+    private fun toggleTheme() {
+        val newDark = !ThemeManager.isDark(this)
+        ThemeManager.setDark(this, newDark)
+        recreate()
+    }
 }
 

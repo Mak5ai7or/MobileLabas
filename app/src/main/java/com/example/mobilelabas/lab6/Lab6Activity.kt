@@ -12,6 +12,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mobilelabas.LanguageManager
 import com.example.mobilelabas.R
+import com.example.mobilelabas.ThemeManager
 
 class Lab6Activity : AppCompatActivity() {
     private val pickText = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
@@ -21,6 +22,7 @@ class Lab6Activity : AppCompatActivity() {
         }
     }
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(ThemeManager.themeRes(this))
         LanguageManager.applySaved(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lab5_loginscreen)
@@ -28,9 +30,11 @@ class Lab6Activity : AppCompatActivity() {
         findViewById<Button>(R.id.enterButton).setOnClickListener {
             loginHandler()
         }
-
         findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
             LanguageManager.toggle(this)
+        }
+        findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
+            toggleTheme()
         }
     }
 
@@ -52,6 +56,11 @@ class Lab6Activity : AppCompatActivity() {
                 pickText.launch(intent)
             }
         }
+    }
+    private fun toggleTheme() {
+        val newDark = !ThemeManager.isDark(this)
+        ThemeManager.setDark(this, newDark)
+        recreate()
     }
 
 }

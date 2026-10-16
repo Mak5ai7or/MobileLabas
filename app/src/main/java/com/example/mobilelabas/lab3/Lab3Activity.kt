@@ -6,11 +6,16 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.appcompat.app.AppCompatActivity
+import com.example.mobilelabas.LanguageManager
 import com.example.mobilelabas.R
+import com.example.mobilelabas.ThemeManager
 
-class Lab3Activity : ComponentActivity() {
+class Lab3Activity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(ThemeManager.themeRes(this))
+        LanguageManager.applySaved(this)
         super.onCreate(savedInstanceState)
         renderLayout()
     }
