@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="margin_zero">0dp</dimen>
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">16dp</dimen>
     <dimen name="margin_large">24dp</dimen>
@@ -19,8 +20,16 @@
     <dimen name="layout_height_for_buttons">48dp</dimen>
     <dimen name="layout_height">56dp</dimen>
 
+    <dimen name="image_button_width">48dp</dimen>
+    <dimen name="image_button_height">48dp</dimen>
+
+    <dimen name="header_height_menu">150dp</dimen>
+
     <dimen name="text_size_title">34sp</dimen>
     <dimen name="text_size_language">16sp</dimen>
+    <dimen name="text_size_lab_menu">20sp</dimen>
     <dimen name="text_size_recycle">40sp</dimen>
+
+
 
 </resources>

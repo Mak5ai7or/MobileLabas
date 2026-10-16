@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/appBgContent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/Header"
+        android:layout_width="@dimen/layout_width"
+        android:layout_height="@dimen/header_height_menu"
+        android:background="?attr/appInfoIcon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/changeThemeButton"
+            android:layout_width="@dimen/image_button_width"
+            android:layout_height="@dimen/image_button_height"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="?attr/appBgContent"
+            android:src="@drawable/outline_clear_day_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/appIconRegular" />
+
+        <ImageButton
+            android:id="@+id/changeLanguageButton"
+            android:layout_width="@dimen/image_button_width"
+            android:layout_height="@dimen/image_button_height"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:background="@drawable/rounded_button"
+            android:backgroundTint="?attr/appBgContent"
+            android:src="@drawable/language"
+            app:layout_constraintEnd_toStartOf="@+id/changeThemeButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/appIconRegular"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TextView
+            android:id="@+id/languageLabel"
+            android:layout_width="@dimen/layout_width_language"
+            android:layout_height="@dimen/layout_height_language"
+            android:layout_marginTop="@dimen/margin_largeplus"
+            android:layout_marginEnd="@dimen/margin_small"
+            android:text="@string/lang"
+            android:textAlignment="viewEnd"
+            android:textColor="?attr/appTextPrimary"
+            android:textSize="@dimen/text_size_language"
+            app:layout_constraintEnd_toStartOf="@+id/changeLanguageButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleMenu"
+            android:layout_width="@dimen/layout_width"
+            android:layout_height="@dimen/margin_xxxxlarge"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_xxxlarge"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:text="@string/title_menu"
+            android:textAlignment="center"
+            android:textColor="?attr/appTextPrimary"
+            android:textSize="@dimen/text_size_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/lab_menu"
+        android:layout_width="@dimen/layout_width"
+        android:layout_height="@dimen/margin_zero"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_zero"
+        android:layout_marginEnd="@dimen/margin_small"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Header"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

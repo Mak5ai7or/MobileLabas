@@ -2,73 +2,62 @@ package com.example.mobilelabas
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.TextView
-import android.widget.Toast
-import androidx.activity.ComponentActivity
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.appcompat.app.AppCompatDelegate.setApplicationLocales
-import androidx.core.os.LocaleListCompat
-import androidx.core.content.edit
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.mobilelabas.lab1.Lab1Activity
+import com.example.mobilelabas.lab2.Lab2Activity
+import com.example.mobilelabas.lab3.Lab3Activity
+import com.example.mobilelabas.lab4.Lab4Activity
+import com.example.mobilelabas.lab5.Lab5Activity
+import com.example.mobilelabas.lab6.Lab6Activity
 
 class MainActivity : AppCompatActivity() {
 
+    private var appliedTheme = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val savedLang = getSharedPreferences("settings", MODE_PRIVATE)
-            .getString("language", "ru")
+            appliedTheme = ThemeManager.themeRes(this)
+            setTheme(appliedTheme)
+            LanguageManager.applySaved(this)
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.lab_menu)
 
-        if (AppCompatDelegate.getApplicationLocales().isEmpty) {
-            setApplicationLocales(
-                LocaleListCompat.forLanguageTags(savedLang!!)
+            val labs = listOf(
+                LabItem(getString(R.string.lab1_title), Lab1Activity::class.java),
+                LabItem(getString(R.string.lab2_title), Lab2Activity::class.java),
+                LabItem(getString(R.string.lab3_title), Lab3Activity::class.java),
+                LabItem(getString(R.string.lab4_title), Lab4Activity::class.java),
+                LabItem(getString(R.string.lab5_title), Lab5Activity::class.java),
+                LabItem(getString(R.string.lab6_title), Lab6Activity::class.java)
             )
-        }
-        renderLayout()
 
-    }
-    private fun renderLayout() {
-        setContentView(R.layout.loginscreen_constraint)
-        findViewById<Button>(R.id.enterButton).setOnClickListener {
-            loginHandler()
-        }
-        findViewById<ImageButton>(R.id.changeLanguageButton).setOnClickListener {
-            changeLanguage()
-        }
-    }
-    private fun loginHandler() {
-        val login = findViewById<EditText>(R.id.loginSpace).text?.toString().orEmpty().trim()
-        val password = findViewById<EditText>(R.id.passSpace).text?.toString().orEmpty().trim()
-
-        when {
-            login.isEmpty() || password.isEmpty() -> {
-                val message = getString(R.string.error_empty_both)
-                Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-                findViewById<TextView>(R.id.resultEnter).text = message
+            val rv = findViewById<RecyclerView>(R.id.lab_menu)
+            rv.layoutManager = LinearLayoutManager(this)
+            rv.adapter = LabsAdapter(labs) { lab ->
+                startActivity(Intent(this, lab.activityClass))
             }
-            else -> {
-                val intent = Intent(this, ListActivity::class.java)
-                intent.putExtra("login", login)
-                startActivity(intent)
+            findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
+                LanguageManager.toggle(this)
+            }
+            findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
+                toggleTheme()
             }
         }
-    }
-    private fun changeLanguage() {
-        val currentLanguage = AppCompatDelegate.getApplicationLocales()
-            .toLanguageTags()
-            .ifEmpty { "ru" }
+        private fun toggleTheme() {
+            val newDark = !ThemeManager.isDark(this)
+            ThemeManager.setDark(this, newDark)
+            recreate()
+        }
 
-        val nextLanguage = if (currentLanguage.startsWith("ru")) "en" else "ru"
-
-        getSharedPreferences("settings", MODE_PRIVATE)
-            .edit {
-                putString("language", nextLanguage)
-            }
-
-        setApplicationLocales(LocaleListCompat.forLanguageTags(nextLanguage))
+    override fun onResume() {
+        super.onResume()
+        val desiredTheme = ThemeManager.themeRes(this)
+        if (desiredTheme != appliedTheme) {
+            appliedTheme = desiredTheme
+            recreate()
         }
     }
 
+    }

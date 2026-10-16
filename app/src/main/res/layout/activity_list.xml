@@ -6,7 +6,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ListActivity">
+    tools:context=".lab5.ListActivity"
+    android:background="?attr/appInfoIcon">
 
     <TextView
         android:id="@+id/list"
@@ -17,7 +18,7 @@
         android:layout_marginEnd="@dimen/margin_large"
         android:text="@string/list_title"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="?attr/appTextPrimary"
         android:textSize="@dimen/text_size_recycle"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,8 @@
         android:layout_marginTop="@dimen/margin_medium"
         android:clipToPadding="false"
         android:paddingBottom="@dimen/margin_large"
+        android:textColor="?attr/appTextPrimary"
+        android:background="?attr/appBgContent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

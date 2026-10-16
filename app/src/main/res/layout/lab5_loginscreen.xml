@@ -5,7 +5,8 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="?attr/appBgContent">
 
     <TextView
         android:id="@+id/authorizeLabel"
@@ -16,7 +17,7 @@
         android:layout_marginEnd="@dimen/margin_horizontal"
         android:text="@string/authorize_label"
         android:textAlignment="center"
-        android:textColor="@color/black"
+        android:textColor="?attr/appTextPrimary"
         android:textSize="@dimen/text_size_title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -30,6 +31,11 @@
         android:layout_marginStart="@dimen/margin_horizontal"
         android:layout_marginTop="@dimen/margin_large"
         android:layout_marginEnd="@dimen/margin_horizontal"
+        android:background="@drawable/text_edit_format"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
+        android:textColorHint="?attr/appCaption"
+        android:paddingHorizontal="@dimen/margin_small"
         android:ems="10"
         android:hint="@string/hint_login"
         android:inputType="text"
@@ -44,6 +50,11 @@
         android:layout_marginStart="@dimen/margin_horizontal"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_horizontal"
+        android:background="@drawable/text_edit_format"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
+        android:textColorHint="?attr/appCaption"
+        android:paddingHorizontal="@dimen/margin_small"
         android:ems="10"
         android:hint="@string/hint_password"
         android:inputType="text"
@@ -59,6 +70,9 @@
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_horizontal"
         android:text="@string/button_enter"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultEnter" />
@@ -70,6 +84,7 @@
         android:layout_marginStart="@dimen/margin_horizontal"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_horizontal"
+        android:textColor="?attr/appCaption"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,20 +92,24 @@
 
     <ImageButton
         android:id="@+id/changeThemeButton"
-        android:layout_width="@dimen/layout_width"
+        android:layout_width="@dimen/image_button_width"
         android:layout_height="@dimen/layout_height_for_buttons"
         android:layout_marginTop="@dimen/margin_medium"
-        android:layout_marginEnd="24dp"
+        android:layout_marginEnd="@dimen/margin_large"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
         android:src="@drawable/outline_clear_day_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/changeLanguageButton"
-        android:layout_width="@dimen/layout_width"
+        android:layout_width="@dimen/image_button_width"
         android:layout_height="@dimen/layout_height_for_buttons"
         android:layout_marginTop="@dimen/margin_medium"
         android:layout_marginEnd="@dimen/margin_medium"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
         android:src="@drawable/language"
         app:layout_constraintEnd_toStartOf="@+id/changeThemeButton"
         app:layout_constraintTop_toTopOf="parent"
@@ -104,9 +123,10 @@
         android:layout_marginEnd="@dimen/margin_small"
         android:text="@string/lang"
         android:textAlignment="viewEnd"
-        android:textColor="@color/black"
+        android:textColor="?attr/appCaption"
         android:textSize="@dimen/text_size_language"
         app:layout_constraintEnd_toStartOf="@+id/changeLanguageButton"
         app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
