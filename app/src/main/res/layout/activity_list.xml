@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".lab5.ListActivity"
-    android:background="?attr/appInfoIcon">
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/list"
@@ -33,7 +33,6 @@
         android:clipToPadding="false"
         android:paddingBottom="@dimen/margin_large"
         android:textColor="?attr/appTextPrimary"
-        android:background="?attr/appBgContent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

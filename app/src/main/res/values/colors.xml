@@ -20,6 +20,16 @@
     <color name="accent_dark">#7A92D0</color>            <!-- Sky 300 -->
     <color name="on_accent_dark">#000000</color>
 
+    <color name="bg_content_star">#0A0000</color>        <!-- Gray 900 -->
+    <color name="text_primary_star">#E0E0E0</color>      <!-- Gray 100 -->
+    <color name="info_icon_star">#3A0000</color>         <!-- Gray 700 -->
+    <color name="icon_regular_star">#8B0000</color>      <!-- Gray 600 -->
+    <color name="caption_star">#B22222</color>           <!-- Gray 500 -->
+    <color name="label_star">#DC143C</color>             <!-- Gray 400 -->
+    <color name="accent_star">#FF2200</color>            <!-- Sky 300 -->
+    <color name="on_accent_star">#000000</color>
+
+
     <!-- Старые цвета, оставь если где-то ещё используются -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

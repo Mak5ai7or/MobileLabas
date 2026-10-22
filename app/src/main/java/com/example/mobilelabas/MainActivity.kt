@@ -2,8 +2,11 @@ package com.example.mobilelabas
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageButton
+import android.widget.PopupMenu
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ContextThemeWrapper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobilelabas.lab1.Lab1Activity
@@ -13,8 +16,9 @@ import com.example.mobilelabas.lab4.Lab4Activity
 import com.example.mobilelabas.lab5.Lab5Activity
 import com.example.mobilelabas.lab6.Lab6Activity
 
-class MainActivity : AppCompatActivity() {
 
+class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity"
     private var appliedTheme = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +45,39 @@ class MainActivity : AppCompatActivity() {
             findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
                 LanguageManager.toggle(this)
             }
-            findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
-                toggleTheme()
+            findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener { view ->
+                val wrapper = ContextThemeWrapper(this, R.style.PopupForTheme)
+                val popup = PopupMenu(wrapper, view)
+
+                popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
+
+                popup.setOnMenuItemClickListener { item ->
+                    when (item.itemId) {
+                        R.id.to_day -> {
+                            ThemeManager.setMode(this, ThemeManager.THEME_DAY)
+                            appliedTheme = ThemeManager.themeRes(this)
+                            recreate()
+                            true
+                        }
+                        R.id.to_night -> {
+                            ThemeManager.setMode(this, ThemeManager.THEME_NIGHT)
+                            appliedTheme = ThemeManager.themeRes(this)
+                            recreate()
+                            true
+                        }
+                        R.id.to_starwars -> {
+                            ThemeManager.setMode(this, ThemeManager.THEME_STARWARS)
+                            appliedTheme = ThemeManager.themeRes(this)
+                            recreate()
+                            true
+                        }
+                        else -> false
+                    }
+                }
+                popup.show()
             }
-        }
-        private fun toggleTheme() {
-            val newDark = !ThemeManager.isDark(this)
-            ThemeManager.setDark(this, newDark)
-            recreate()
+
+        Log.d(TAG, "onCreate")
         }
 
     override fun onResume() {
@@ -58,6 +87,32 @@ class MainActivity : AppCompatActivity() {
             appliedTheme = desiredTheme
             recreate()
         }
+        Log.d(TAG, "onResume")
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, "onDestroy")
     }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, "onStart")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, "onPause")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart")
+    }
+
+}

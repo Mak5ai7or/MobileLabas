@@ -6,10 +6,12 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.PopupMenu
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.view.ContextThemeWrapper
 import com.example.mobilelabas.LanguageManager
 import com.example.mobilelabas.R
 import com.example.mobilelabas.ThemeManager
@@ -21,8 +23,12 @@ class Lab6Activity : AppCompatActivity() {
             Toast.makeText(this, selected, Toast.LENGTH_SHORT).show()
         }
     }
+
+    private var appliedTheme = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(ThemeManager.themeRes(this))
+        appliedTheme = ThemeManager.themeRes(this)
+        setTheme(appliedTheme)
         LanguageManager.applySaved(this)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lab5_loginscreen)
@@ -33,13 +39,39 @@ class Lab6Activity : AppCompatActivity() {
         findViewById<ImageButton>(R.id.changeLanguageButton)?.setOnClickListener {
             LanguageManager.toggle(this)
         }
-        findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener {
-            toggleTheme()
+        findViewById<ImageButton>(R.id.changeThemeButton)?.setOnClickListener { view ->
+            val wrapper = ContextThemeWrapper(this, R.style.PopupForTheme)
+            val popup = PopupMenu(wrapper, view)
+
+            popup.menuInflater.inflate(R.menu.popup_menu, popup.menu)
+
+            popup.setOnMenuItemClickListener { item ->
+                when (item.itemId) {
+                    R.id.to_day -> {
+                        ThemeManager.setMode(this, ThemeManager.THEME_DAY)
+                        appliedTheme = ThemeManager.themeRes(this)
+                        recreate()
+                        true
+                    }
+                    R.id.to_night -> {
+                        ThemeManager.setMode(this, ThemeManager.THEME_NIGHT)
+                        appliedTheme = ThemeManager.themeRes(this)
+                        recreate()
+                        true
+                    }
+                    R.id.to_starwars -> {
+                        ThemeManager.setMode(this, ThemeManager.THEME_STARWARS)
+                        appliedTheme = ThemeManager.themeRes(this)
+                        recreate()
+                        true
+                    }
+                    else -> false
+                }
+            }
+            popup.show()
         }
     }
 
-    // Картинка со звездными войнами на фоне
-    // Цвета кнопок и полей в соответствии с фоном
     private fun loginHandler() {
         val login = findViewById<EditText>(R.id.loginSpace).text?.toString().orEmpty().trim()
         val password = findViewById<EditText>(R.id.passSpace).text?.toString().orEmpty().trim()
@@ -57,11 +89,5 @@ class Lab6Activity : AppCompatActivity() {
             }
         }
     }
-    private fun toggleTheme() {
-        val newDark = !ThemeManager.isDark(this)
-        ThemeManager.setDark(this, newDark)
-        recreate()
-    }
-
 }
 

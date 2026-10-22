@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="?attr/appBgContent">
+    android:background="@android:color/transparent">
 
     <TextView
         android:id="@+id/authorizeLabel"
@@ -84,7 +84,7 @@
         android:layout_marginStart="@dimen/margin_horizontal"
         android:layout_marginTop="@dimen/margin_small"
         android:layout_marginEnd="@dimen/margin_horizontal"
-        android:textColor="?attr/appCaption"
+        android:textColor="?attr/appTextPrimary"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -99,6 +99,7 @@
         android:background="@drawable/rounded_button"
         android:backgroundTint="?attr/appInfoIcon"
         android:src="@drawable/outline_clear_day_24"
+        app:tint="?attr/appIconRegular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,6 +114,7 @@
         android:src="@drawable/language"
         app:layout_constraintEnd_toStartOf="@+id/changeThemeButton"
         app:layout_constraintTop_toTopOf="parent"
+        app:tint="?attr/appIconRegular"
         tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
@@ -123,7 +125,7 @@
         android:layout_marginEnd="@dimen/margin_small"
         android:text="@string/lang"
         android:textAlignment="viewEnd"
-        android:textColor="?attr/appCaption"
+        android:textColor="?attr/appTextPrimary"
         android:textSize="@dimen/text_size_language"
         app:layout_constraintEnd_toStartOf="@+id/changeLanguageButton"
         app:layout_constraintTop_toTopOf="parent" />

@@ -31,4 +31,24 @@
         <item name="android:textColorPrimary">@color/text_primary_dark</item>
     </style>
 
+    <style name="Theme.MobileLabas.Starwars" parent="Base.Theme.MobileLabas">
+        <item name="appBgContent">@color/bg_content_star</item>
+        <item name="appTextPrimary">@color/text_primary_star</item>
+        <item name="appInfoIcon">@color/info_icon_star</item>
+        <item name="appIconRegular">@color/white</item>
+        <item name="appCaption">@color/caption_star</item>
+        <item name="appLabel">@color/label_star</item>
+        <item name="appAccent">@color/accent_star</item>
+        <item name="appOnAccent">@color/white</item>
+
+        <item name="android:windowBackground">@drawable/bg_star</item>
+        <item name="android:textColorPrimary">@color/text_primary_star</item>
+    </style>
+
+    <style name="PopupForTheme" parent="Widget.AppCompat.PopupMenu">
+        <item name="android:popupBackground">?attr/appBgContent</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">?attr/appCaption</item>
+    </style>
+
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/to_day"
+        android:title="Светлая" />
+    <item
+        android:id="@+id/to_night"
+        android:title="Темная" />
+    <item
+        android:id="@+id/to_starwars"
+        android:title="Звездные войны" />
+</menu>

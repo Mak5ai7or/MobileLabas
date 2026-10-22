@@ -6,22 +6,29 @@ import android.content.SharedPreferences
 object ThemeManager {
 
     private const val PREFS = "settings"
-    private const val KEY_THEME = "theme_dark"
+    private const val KEY_THEME = "theme_mode"
 
-    /** true = тёмная, false = светлая */
-    fun isDark(context: Context): Boolean {
-        return prefs(context).getBoolean(KEY_THEME, false)
+    const val THEME_DAY = "day"
+    const val THEME_NIGHT = "night"
+    const val THEME_STARWARS = "starwars"
+
+    private var cachedMode: String? = null
+
+    fun currentMode(context: Context): String {
+        cachedMode?.let {return it}
+        val value = prefs(context).getString(KEY_THEME, THEME_DAY) ?: THEME_DAY
+        cachedMode = value
+        return value
+    }
+    fun setMode(context: Context, mode: String) {
+        prefs(context).edit().putString(KEY_THEME, mode).commit()
+        cachedMode = mode
     }
 
-    /** Сохраняем выбор. Применяется при следующем onCreate. */
-    fun setDark(context: Context, dark: Boolean) {
-        prefs(context).edit().putBoolean(KEY_THEME, dark).apply()
-    }
-
-    /** id темы для setTheme() */
-    fun themeRes(context: Context): Int {
-        return if (isDark(context)) R.style.Theme_MobileLabas_Dark
-        else R.style.Theme_MobileLabas
+    fun themeRes(context: Context): Int = when (currentMode(context)) {
+        THEME_NIGHT -> R.style.Theme_MobileLabas_Dark
+        THEME_STARWARS -> R.style.Theme_MobileLabas_Starwars
+        else -> R.style.Theme_MobileLabas
     }
 
     private fun prefs(context: Context): SharedPreferences =
