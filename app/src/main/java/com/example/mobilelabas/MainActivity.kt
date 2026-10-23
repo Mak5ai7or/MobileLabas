@@ -15,6 +15,7 @@ import com.example.mobilelabas.lab3.Lab3Activity
 import com.example.mobilelabas.lab4.Lab4Activity
 import com.example.mobilelabas.lab5.Lab5Activity
 import com.example.mobilelabas.lab6.Lab6Activity
+import com.example.mobilelabas.lab7.Lab7Activity
 
 
 class MainActivity : AppCompatActivity() {
@@ -34,7 +35,8 @@ class MainActivity : AppCompatActivity() {
                 LabItem(getString(R.string.lab3_title), Lab3Activity::class.java),
                 LabItem(getString(R.string.lab4_title), Lab4Activity::class.java),
                 LabItem(getString(R.string.lab5_title), Lab5Activity::class.java),
-                LabItem(getString(R.string.lab6_title), Lab6Activity::class.java)
+                LabItem(getString(R.string.lab6_title), Lab6Activity::class.java),
+                LabItem(getString(R.string.lab7_title), Lab7Activity::class.java)
             )
 
             val rv = findViewById<RecyclerView>(R.id.lab_menu)

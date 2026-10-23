@@ -11,12 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="?attr/appTextPrimary"
-        android:textSize="24sp"/>
+        android:textSize="@dimen/text_size_title"/>
 
     <Button
+        android:layout_width="@dimen/layout_width_language"
+        android:layout_height="@dimen/layout_height"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
         android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_medium"
         android:text="Назад"/>
 </LinearLayout>

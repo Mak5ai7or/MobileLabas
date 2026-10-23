@@ -11,9 +11,9 @@
     <string name="lang">English (en)</string>
     <string name="title_menu">Choose the laboratory work</string>
 
-    <string name="error_empty_both">You dont enter login and (or) password</string>
+    <string name="error_empty_both">You don\'t enter login and (or) password</string>
     <string name="result_login_password">login: %1$s, Password: %2$s</string>
-    <string name="list_title">Wanted!</string>
+    <string name="list_title">List</string>
 
     <string name="lab1_title">Laboratory work 1\nIntroduction to the Android ecosystem and development tools</string>
     <string name="lab2_title">Laboratory work 2\nUI design. Layouts and ViewElements</string>
@@ -21,4 +21,5 @@
     <string name="lab4_title">Laboratory work 4\nWorking with application resources</string>
     <string name="lab5_title">Laboratory work 5\nLists and adapters (RecyclerView)</string>
     <string name="lab6_title">Laboratory work 6</string>
+    <string name="lab7_title">Laboratory work 7</string>
 </resources>

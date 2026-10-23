@@ -13,7 +13,7 @@
         android:layout_width="@dimen/layout_width"
         android:layout_height="@dimen/layout_height"
         android:layout_marginStart="@dimen/margin_horizontal"
-        android:layout_marginTop="@dimen/margin_giga"
+        android:layout_marginTop="@dimen/margin_xxxxlarge"
         android:layout_marginEnd="@dimen/margin_horizontal"
         android:text="@string/authorize_label"
         android:textAlignment="center"

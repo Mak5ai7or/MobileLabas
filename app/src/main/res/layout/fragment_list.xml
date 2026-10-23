@@ -10,19 +10,28 @@
         android:id="@+id/btnItem1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Элемент 1"/>
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
+        android:text="1"/>
 
     <Button
         android:id="@+id/btnItem2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_small"
-        android:text="Элемент 2"/>
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
+        android:text="2"/>
 
     <Button
         android:id="@+id/btnItem3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:backgroundTint="?attr/appInfoIcon"
+        android:textColor="?attr/appTextPrimary"
         android:layout_marginTop="@dimen/margin_small"
-        android:text="Элемент 3"/>
+        android:text="3"/>
 </LinearLayout>
