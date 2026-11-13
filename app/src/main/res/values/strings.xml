@@ -15,7 +15,7 @@
     <string name="result_login_password">Логин: %1$s, Пароль: %2$s</string>
     <string name="list_title">Список</string>
 
-    <string name="detail_title">Детали</string>
+    <string name="detail_title">Детали: %1$s</string>
     <string name="fragment_detail1">Здесь что-то есть</string>
     <string name="fragment_detail2">Там кто-то был</string>
     <string name="fragment_detail3">Тут никого нет</string>

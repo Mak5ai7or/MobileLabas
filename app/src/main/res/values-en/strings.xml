@@ -16,7 +16,7 @@
     <string name="list_title">List</string>
 
 
-    <string name="detail_title">Detail</string>
+    <string name="detail_title">Detail: %1$s</string>
     <string name="fragment_detail1">Something is here</string>
     <string name="fragment_detail2">There was somebody</string>
     <string name="fragment_detail3">Nobody here</string>
