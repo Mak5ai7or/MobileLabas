@@ -40,13 +40,13 @@ class ListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.btnItem1).setOnClickListener {
-            (activity as? OnItemSelectedListener)?.onItemSelected("Элемент 1")
+            (activity as? OnItemSelectedListener)?.onItemSelected(getString(R.string.fragment_detail1))
         }
         view.findViewById<Button>(R.id.btnItem2).setOnClickListener {
-            (activity as? OnItemSelectedListener)?.onItemSelected("Элемент 2")
+            (activity as? OnItemSelectedListener)?.onItemSelected(getString(R.string.fragment_detail2))
         }
         view.findViewById<Button>(R.id.btnItem3).setOnClickListener {
-            (activity as? OnItemSelectedListener)?.onItemSelected("Элемент 3")
+            (activity as? OnItemSelectedListener)?.onItemSelected(getString(R.string.fragment_detail3))
         }
         Log.d(TAG, "onViewCreated")
     }

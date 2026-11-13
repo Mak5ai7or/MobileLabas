@@ -10,6 +10,7 @@
         android:id="@+id/tvDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_medium"
         android:textColor="?attr/appTextPrimary"
         android:textSize="@dimen/text_size_title"/>
 
@@ -21,5 +22,5 @@
         android:backgroundTint="?attr/appInfoIcon"
         android:textColor="?attr/appTextPrimary"
         android:id="@+id/btnBack"
-        android:text="Назад"/>
+        android:text="@string/fragment_backbutton"/>
 </LinearLayout>

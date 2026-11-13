@@ -15,11 +15,20 @@
     <string name="result_login_password">Логин: %1$s, Пароль: %2$s</string>
     <string name="list_title">Список</string>
 
+    <string name="detail_title">Детали</string>
+    <string name="fragment_detail1">Здесь что-то есть</string>
+    <string name="fragment_detail2">Там кто-то был</string>
+    <string name="fragment_detail3">Тут никого нет</string>
+    <string name="fragment_button1">Получить что-то</string>
+    <string name="fragment_button2">Найти кого-то</string>
+    <string name="fragment_button3">Что-то</string>
+    <string name="fragment_backbutton">Назад</string>
+
     <string name="lab1_title">Лабораторная работа 1\nЗнакомство с экосистемой Android и инструментами разработки</string>
     <string name="lab2_title">Лабораторная работа 2\nПроектирование пользовательского интерфейса. Layouts и ViewElements</string>
     <string name="lab3_title">Лабораторная работа 3\nОбработка событий и основы Activity</string>
     <string name="lab4_title">Лабораторная работа 4\nРабота с ресурсами приложения</string>
     <string name="lab5_title">Лабораторная работа 5\nСписки и адаптеры (RecyclerView)</string>
-    <string name="lab6_title">Лабораторная работа 6</string>
-    <string name="lab7_title">Лабораторная работа 7</string>
+    <string name="lab6_title">Лабораторная работа 6\nЖизненный цикл Fragment. Создание и управление</string>
+    <string name="lab7_title">Лабораторная работа 7\nСоздание меню и диалоговых окон</string>
 </resources>

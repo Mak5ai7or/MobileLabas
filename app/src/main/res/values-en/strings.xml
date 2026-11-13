@@ -15,11 +15,21 @@
     <string name="result_login_password">login: %1$s, Password: %2$s</string>
     <string name="list_title">List</string>
 
+
+    <string name="detail_title">Detail</string>
+    <string name="fragment_detail1">Something is here</string>
+    <string name="fragment_detail2">There was somebody</string>
+    <string name="fragment_detail3">Nobody here</string>
+    <string name="fragment_button1">Get something</string>
+    <string name="fragment_button2">Find someone</string>
+    <string name="fragment_button3">Anything</string>
+    <string name="fragment_backbutton">Back</string>
+
     <string name="lab1_title">Laboratory work 1\nIntroduction to the Android ecosystem and development tools</string>
     <string name="lab2_title">Laboratory work 2\nUI design. Layouts and ViewElements</string>
     <string name="lab3_title">Laboratory work 3\nEvent handling and Activity basics</string>
     <string name="lab4_title">Laboratory work 4\nWorking with application resources</string>
     <string name="lab5_title">Laboratory work 5\nLists and adapters (RecyclerView)</string>
-    <string name="lab6_title">Laboratory work 6</string>
-    <string name="lab7_title">Laboratory work 7</string>
+    <string name='lab6_title'>Laboratory work 6\nLife cycle of Fragment. Creation and management</string>
+    <string name='lab7_title'>Laboratory work 7\nCreating Menus and Dialog Boxes</string>
 </resources>

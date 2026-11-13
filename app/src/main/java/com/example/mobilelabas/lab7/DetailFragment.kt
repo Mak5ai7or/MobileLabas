@@ -43,7 +43,7 @@ class DetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val item = arguments?.getString(ARG_ITEM).orEmpty()
-        view.findViewById<TextView>(R.id.tvDetail).text = "Детали: $item"
+        view.findViewById<TextView>(R.id.tvDetail).text = "${getString(R.string.detail_title)}: $item"
 
         view.findViewById<Button>(R.id.btnBack).setOnClickListener {
             parentFragmentManager.popBackStack()

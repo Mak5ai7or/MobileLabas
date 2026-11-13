@@ -13,7 +13,7 @@
         android:background="@drawable/rounded_button"
         android:backgroundTint="?attr/appInfoIcon"
         android:textColor="?attr/appTextPrimary"
-        android:text="1"/>
+        android:text="@string/fragment_button1"/>
 
     <Button
         android:id="@+id/btnItem2"
@@ -23,7 +23,7 @@
         android:background="@drawable/rounded_button"
         android:backgroundTint="?attr/appInfoIcon"
         android:textColor="?attr/appTextPrimary"
-        android:text="2"/>
+        android:text="@string/fragment_button2"/>
 
     <Button
         android:id="@+id/btnItem3"
@@ -33,5 +33,5 @@
         android:backgroundTint="?attr/appInfoIcon"
         android:textColor="?attr/appTextPrimary"
         android:layout_marginTop="@dimen/margin_small"
-        android:text="3"/>
+        android:text="@string/fragment_button3"/>
 </LinearLayout>
